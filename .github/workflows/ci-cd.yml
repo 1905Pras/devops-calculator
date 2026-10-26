@@ -65,7 +65,7 @@ jobs:
           sam deploy \
             --template-file .aws-sam/build/template.yaml \
             --stack-name devops-calculator-dev \
-            --resolve-s3 \
+            --s3-bucket devops-calculator-deploy-851914961775-ap-south-1 \
             --capabilities CAPABILITY_IAM \
             --no-confirm-changeset \
             --no-fail-on-empty-changeset \
