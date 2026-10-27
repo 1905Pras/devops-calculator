@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: DevOps Calculator Assignment
+Globals:
+  Function:
+    Runtime: python3.12
+    Timeout: 10
+    MemorySize: 128
+Resources:
+  CalculatorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: CalculatorFunction
+      Handler: app.lambda_handler
+      Description: Calculator supporting addition, subtraction, and multiplication
+      Policies:
+      - AWSLambdaBasicExecutionRole
+      Events:
+        CalculatorApi:
+          Type: Api
+          Properties:
+            Path: /calculate
+            Method: POST
+    Metadata:
+      SamResourceId: CalculatorFunction
+Outputs:
+  CalculatorApiUrl:
+    Description: Calculator API endpoint
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/calculate
