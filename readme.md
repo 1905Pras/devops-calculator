@@ -652,7 +652,3 @@ Potential enhancements include:
 GitHub: [1905Pras](https://github.com/1905Pras)
 
 Repository: [devops-calculator](https://github.com/1905Pras/devops-calculator)
-
----
-
-*This project was developed as a hands-on exercise to understand automated testing, Docker, GitHub Actions, AWS serverless services, Infrastructure as Code, IAM, and CI/CD deployment workflows.*
